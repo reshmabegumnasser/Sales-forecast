@@ -23,9 +23,11 @@ st.set_page_config(
 def load_model():
 
   from xgboost import XGBRegressor
+    model = XGBRegressor() 
+      model.load_model("model/xgboost_model.json")
 
-model = XGBRegressor()
-model.load_model("model/xgboost_model.json")
+
+
 
     feature_columns = joblib.load(
         "model/feature_columns.pkl"
